@@ -4,5 +4,3 @@ module "resource_group" {
     rg_location = var.location
     naming_suffix = local.naming_prefix
 }
-
-value = module.resource_group.rg_NAME
