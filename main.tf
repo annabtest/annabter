@@ -6,7 +6,7 @@ module "resource_group" {
 }
 
 module "public_ips" {
-    source "./modules/public_ips"
+    source = "./modules/public_ips"
 
     pip_location = var.location
     naming_suffix = local.naming_suffix
