@@ -26,3 +26,13 @@ module "hub_network" {
   subnet_name = var.azfw_subnet_name
   route_name = "route_to_internet"
 }
+
+module "azure_firewall" {
+  source = "./modules/firewall"
+
+  location = var.location
+  rg_name = module.hub_resource_group.rg_NAME
+  naming_suffix = local.naming_suffix
+  pip_id = module.public_ips.pip_id
+  subnet_id = module.hub_network.subnet_id
+}
