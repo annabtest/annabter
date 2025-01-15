@@ -32,7 +32,7 @@ variable "route_name" {
   type = string
 }
 
-variable "next_hop_in_ip_address" {
+variable "next_hop_ip_address" {
   type = string
   default = ""
 }
