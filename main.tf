@@ -13,11 +13,12 @@ module "public_ips" {
     rg_name = module.resource_group.rg_NAME
 }
 
-module "network" {
+module "hub_network" {
   source = "./modules/network"
   
   location = var.location
-  rg_name = module.resource_group.rg_NAME
+  rg_name = "hub_${module.resource_group.rg_NAME}"
+  vnet_name = "hub_vnet_${local.naming_suffix}"
   naming_suffix = local.naming_suffix
   vnet_address_space = var.hub_vnet_address_space
   subnet_address_prefixes = var.azfw_subnet_address_prefixes
