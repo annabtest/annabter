@@ -5,3 +5,7 @@ variable "rg_location" {
 variable "naming_suffix" {
     type = string
 }
+
+variable "naming_prefix" {
+  type = string
+}
