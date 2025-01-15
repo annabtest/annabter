@@ -50,3 +50,7 @@ variable "azfw_subnet_address_prefixes" {
 variable "azfw_subnet_name" {
   type = string
 }
+
+variable "next_hop_ip_address" {
+  type = any
+}
