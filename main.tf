@@ -36,3 +36,24 @@ module "azure_firewall" {
   pip_id        = module.public_ips.pip_id
   subnet_id     = module.hub_network.subnet_id
 }
+
+# module "aks_resource_group" {
+#   source = "./modules/resource_group"
+
+#   rg_location   = var.location
+#   naming_prefix = "rg_aks"
+#   naming_suffix = local.naming_suffix
+# }
+
+# module "aks_network" {
+#   source = "./modules/network"
+
+#   location                = var.location
+#   rg_name                 = module.aks_resource_group.rg_NAME
+#   vnet_name               = "aks_vnet_${local.naming_suffix}"
+#   naming_suffix           = local.naming_suffix
+#   vnet_address_space      = var.aks_vnet_address_space
+#   subnet_address_prefixes = var.aks_subnet_address_prefixes
+#   subnet_name             = "aks_sub_${local.naming_suffix}"
+#   route_name              = "route_to_internet"
+# }

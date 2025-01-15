@@ -38,7 +38,7 @@ variable "location" {
 
 
 
-# Network Configuration
+# HUB Network Configuration
 variable "hub_vnet_address_space" {
   type = list(string)
 }
@@ -48,6 +48,19 @@ variable "azfw_subnet_address_prefixes" {
 }
 
 variable "azfw_subnet_name" {
+  type = string
+}
+
+# AKS Network Configuration
+variable "aks_vnet_address_space" {
+  type = list(string)
+}
+
+variable "aks_subnet_address_prefixes" {
+  type = list(string)
+}
+
+variable "aks_subnet_name" {
   type = string
 }
 
