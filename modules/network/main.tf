@@ -21,7 +21,13 @@ resource "azurerm_route_table" "route_table" {
     name           = var.route_name
     address_prefix = "0.0.0.0/0"
     next_hop_type  = "Internet"
-    next_hop_in_ip_address = var.next_hop_in_ip_address
+    
+    dynamic "next_hop_ip_address" {
+        for_each = var.route_type == "VirtualAppliance" && var.next_hop_ip_address != "" ? [var.next_hop_ip_address] : []
+        content {
+        next_hop_ip_address = next_hop_ip_address.value
+    }
+    }
   }
 }
 
