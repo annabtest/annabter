@@ -1,16 +1,16 @@
 variable "location" {
-    type = string
+  type = string
 }
 
 variable "rg_name" {
-    type = string
+  type = string
 }
 
 variable "vnet_name" {
   type = string
 }
 variable "naming_suffix" {
-    type = string
+  type = string
 }
 
 variable "vnet_address_space" {
@@ -26,5 +26,9 @@ variable "subnet_name" {
 }
 
 variable "route_name" {
+  type = string
+}
+
+variable "next_hop_in_ip_address" {
   type = string
 }

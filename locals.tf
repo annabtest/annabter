@@ -1,3 +1,3 @@
 locals {
-    naming_suffix = "${var.region_code}-${var.envioronment}-${var.department}"
+  naming_suffix = "${var.region_code}-${var.envioronment}-${var.department}"
 }
