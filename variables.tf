@@ -35,3 +35,18 @@ variable "department" {
 variable "location" {
     type = string
 }
+
+
+
+# Network Configuration
+variable "hub_vnet_address_space" {
+  type = list(string)
+}
+
+variable "azfw_subnet_address_prefixes" {
+  type = list(string)
+}
+
+variable "azfw_subnet_name" {
+  type = string
+}
