@@ -1,4 +1,4 @@
-resource "azurerm_firewall" "example" {
+resource "azurerm_firewall" "firewall" {
   name                = "azfw_${var.naming_suffix}"
   location            = var.location
   resource_group_name = var.rg_name
@@ -9,5 +9,5 @@ resource "azurerm_firewall" "example" {
     name                 = "configuration"
     subnet_id            = var.subnet_id
     public_ip_address_id = var.pip_id
-}
+  }
 }

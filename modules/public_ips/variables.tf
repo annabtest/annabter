@@ -1,11 +1,11 @@
 variable "pip_location" {
-    type = string
+  type = string
 }
 
 variable "rg_name" {
-    type = string
+  type = string
 }
 
 variable "naming_suffix" {
-    type = string
+  type = string
 }

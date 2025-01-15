@@ -18,9 +18,10 @@ resource "azurerm_route_table" "route_table" {
   resource_group_name = var.rg_name
 
   route {
-    name                   = var.route_name
-    address_prefix         = "0.0.0.0/0"
-    next_hop_type          = "Internet"
+    name           = var.route_name
+    address_prefix = "0.0.0.0/0"
+    next_hop_type  = "Internet"
+    next_hop_in_ip_address = var.next_hop_in_ip_address
   }
 }
 
