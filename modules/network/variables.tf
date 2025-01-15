@@ -24,3 +24,7 @@ variable "subnet_address_prefixes" {
 variable "subnet_name" {
   type = string
 }
+
+variable "route_name" {
+  type = string
+}

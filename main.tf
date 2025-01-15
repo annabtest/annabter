@@ -24,4 +24,5 @@ module "hub_network" {
   vnet_address_space = var.hub_vnet_address_space
   subnet_address_prefixes = var.azfw_subnet_address_prefixes
   subnet_name = var.azfw_subnet_name
+  route_name = "route_to_internet"
 }
