@@ -25,8 +25,6 @@ module "hub_network" {
   subnet_address_prefixes = var.azfw_subnet_address_prefixes
   subnet_name             = var.azfw_subnet_name
   route_name              = "route_to_internet"
-  route_type              = "VirtualAppliance"  # "Internet" or "VirtualAppliance"
-  next_hop_ip_address     = "10.0.0.4"           # Only required if route_type is VirtualAppliance
 }
 
 module "azure_firewall" {

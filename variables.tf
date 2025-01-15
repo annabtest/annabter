@@ -51,7 +51,3 @@ variable "azfw_subnet_name" {
   type = string
 }
 
-variable "next_hop_ip_address" {
-  type = any
-  default = ""
-}

@@ -25,14 +25,7 @@ variable "subnet_name" {
   type = string
 }
 
-variable "route_type" {
-  type = string
-}
 variable "route_name" {
   type = string
 }
 
-variable "next_hop_ip_address" {
-  type = string
-  default = ""
-}
