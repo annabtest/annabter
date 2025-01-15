@@ -17,3 +17,36 @@ variable "tenant_id" {
   type    = string
   default = "dc00758b-d159-4ec1-965d-31eafd5a603e"
 }
+
+# Naming Convention Values
+variable "region_code" {
+  type = string
+}
+
+variable "envioronment" {
+  type = string
+}
+
+variable "department" {
+  type = string
+}
+
+# General Properties
+variable "location" {
+  type = string
+}
+
+
+
+# Network Configuration
+variable "hub_vnet_address_space" {
+  type = list(string)
+}
+
+variable "azfw_subnet_address_prefixes" {
+  type = list(string)
+}
+
+variable "azfw_subnet_name" {
+  type = string
+}
