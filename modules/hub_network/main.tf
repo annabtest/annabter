@@ -13,15 +13,14 @@ resource "azurerm_subnet" "subnet" {
 }
 
 resource "azurerm_route_table" "route_table" {
-  name                = "rt_${var.naming_suffix}"
+  name                = "rt_fw_${var.naming_suffix}"
   location            = var.location
   resource_group_name = var.rg_name
 
   route {
-    name           = "route_${var.naming_suffix}"
+    name           = var.route_name
     address_prefix = "0.0.0.0/0"
-    next_hop_type  = var.next_hop_type
-    next_hop_in_ip_address = var.next_hop_in_ip_address
+    next_hop_type  = "Internet"
   }
 }
 

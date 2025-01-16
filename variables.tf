@@ -36,6 +36,9 @@ variable "location" {
   type = string
 }
 
+variable "next_hop_in_ip_address" {
+  type = list(string)
+}
 
 
 # HUB Network Configuration
