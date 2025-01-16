@@ -38,7 +38,7 @@ variable "location" {
 
 variable "next_hop_in_ip_address" {
   type = list(string)
-  default = [ "" ]
+  default = ["10.70.0.4"]
 }
 
 
