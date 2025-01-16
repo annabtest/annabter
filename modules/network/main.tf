@@ -25,8 +25,16 @@ resource "azurerm_route_table" "route_table" {
   }
 }
 
-
 resource "azurerm_subnet_route_table_association" "subnet_route" {
   subnet_id      = azurerm_subnet.subnet.id
   route_table_id = azurerm_route_table.route_table.id
+}
+
+resource "azurerm_virtual_network_peering" "name" {
+  name = "peer-${azurerm_virtual_network.virtual_network.name}-to-hub"
+  resource_group_name = var.rg_name
+  virtual_network_name = azurerm_virtual_network.virtual_network.name
+  remote_virtual_network_id = var.remote_virtual_network_id
+  allow_forwarded_traffic = true
+  use_remote_gateways = true
 }
