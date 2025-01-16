@@ -63,7 +63,4 @@ variable "aks_subnet_address_prefixes" {
   type = list(string)
 }
 
-variable "aks_subnet_name" {
-  type = string
-}
 
