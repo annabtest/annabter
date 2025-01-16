@@ -5,7 +5,6 @@ region_code  = "we"
 
 # General Properties
 location = "West Europe"
-next_hop_in_ip_address = "10.70.0.4"
 
 # HUB Network Configurations
 hub_vnet_address_space       = ["10.70.0.0/24"]

@@ -36,10 +36,6 @@ variable "location" {
   type = string
 }
 
-variable "next_hop_in_ip_address" {
-  type = string
-}
-
 
 # HUB Network Configuration
 variable "hub_vnet_address_space" {
