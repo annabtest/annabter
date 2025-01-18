@@ -18,34 +18,8 @@ resource "azurerm_monitor_diagnostic_setting" "diagset" {
   target_resource_id         = azurerm_firewall.firewall.id
   log_analytics_workspace_id = var.loga_id
 
-  log {
-    category = "AzureFirewallApplicationRule"
-    enabled  = true
-  }
-
-  log {
-    category = "AzureFirewallNetworkRule"
-    enabled  = true
-  }
-
-  log {
-    category = "AzureFirewallDNATRule"
-    enabled  = true
-  }
-
-  log {
-    category = "AzureFirewallThreatIntelRule"
-    enabled  = true
-  }
-
-  log {
-    category = "AzureFirewallApplicationRuleAlert"
-    enabled  = true
-  }
-
-  log {
-    category = "AzureFirewallNetworkRuleAlert"
-    enabled  = true
+  enabled_log {
+    category = ["AzureFirewallApplicationRule","AzureFirewallNetworkRule","AzureFirewallDNATRule","AzureFirewallThreatIntelRule","AzureFirewallApplicationRuleAlert","AzureFirewallNetworkRuleAlert"]
   }
 
   # Enable metrics
