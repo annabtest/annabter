@@ -25,18 +25,7 @@ variable "subnet_name" {
   type = string
 }
 
-variable "next_hop_type" {
+variable "route_name" {
   type = string
 }
 
-variable "next_hop_in_ip_address" {
-  type = string
-}
-
-variable "remote_virtual_network_id" {
-  type = string
-}
-
-variable "remote_virtual_network_name" {
-  type = string
-}
