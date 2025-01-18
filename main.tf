@@ -49,7 +49,8 @@ module "aks_network" {
   source = "./modules/network"
 
   location                = var.location
-  rg_name                 = module.aks_resource_group.rg_NAME
+  aks_rg_name                 = module.aks_resource_group.rg_NAME
+  hub_rg_name = module.hub_resource_group.rg_NAME
   vnet_name               = "aks_vnet_${local.naming_suffix}"
   naming_suffix           = local.naming_suffix
   vnet_address_space      = var.aks_vnet_address_space
