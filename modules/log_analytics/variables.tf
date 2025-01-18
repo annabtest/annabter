@@ -10,14 +10,3 @@ variable "naming_suffix" {
   type = string
 }
 
-variable "pip_id" {
-  type = string
-}
-
-variable "subnet_id" {
-  type = string
-}
-
-variable "loga_id" {
-  type = string
-}
