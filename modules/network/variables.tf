@@ -2,7 +2,7 @@ variable "location" {
   type = string
 }
 
-variable "aks_rg_name" {
+variable "rg_name" {
   type = string
 }
 

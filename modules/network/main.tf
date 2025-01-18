@@ -32,7 +32,7 @@ resource "azurerm_subnet_route_table_association" "subnet_route" {
 
 resource "azurerm_virtual_network_peering" "vnet_to_hub" {
   name                      = "peer-${azurerm_virtual_network.virtual_network.name}-to-hub"
-  resource_group_name       = var.aks_rg_name
+  resource_group_name       = var.rg_name
   virtual_network_name      = azurerm_virtual_network.virtual_network.name
   remote_virtual_network_id = var.remote_virtual_network_id
   allow_forwarded_traffic   = true
