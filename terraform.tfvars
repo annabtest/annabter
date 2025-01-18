@@ -13,5 +13,5 @@ azfw_subnet_name             = "AzureFirewallSubnet"
 
 # AKS Network Configurations
 aks_vnet_address_space       = ["10.80.10.0/16"]
-aks_subnet_address_prefixes = ["10.70.10.0/24"]
+aks_subnet_address_prefixes = ["10.80.10.0/24"]
 
