@@ -2,7 +2,11 @@ variable "location" {
   type = string
 }
 
-variable "rg_name" {
+variable "aks_rg_name" {
+  type = string
+}
+
+variable "hub_rg_name" {
   type = string
 }
 
