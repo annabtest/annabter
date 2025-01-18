@@ -58,4 +58,5 @@ module "aks_network" {
   next_hop_in_ip_address = module.azure_firewall.firewall_private_ip
   next_hop_type = "VirtualAppliance"
   remote_virtual_network_id = module.hub_network.hub_vnet_id
+  remote_virtual_network_name = module.hub_network.hub_vnet_name
 }

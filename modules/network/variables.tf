@@ -36,3 +36,7 @@ variable "next_hop_in_ip_address" {
 variable "remote_virtual_network_id" {
   type = string
 }
+
+variable "remote_virtual_network_name" {
+  type = string
+}

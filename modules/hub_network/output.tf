@@ -1,4 +1,4 @@
-output "vnet_name" {
+output "hub_vnet_name" {
   value = azurerm_virtual_network.virtual_network.name
 }
 
