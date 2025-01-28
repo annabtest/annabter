@@ -79,5 +79,5 @@ module "public_ips" {
   pip_location  = var.location
   naming_prefix = "pip_ingress"
   naming_suffix = var.envioronment
-  rg_name       = MC_rg_aks_we-dev-aks_kuberfortesting3_westeurope ####NEED TO CHANGE
+  rg_name       = "MC_rg_aks_we-dev-aks_kuberfortesting3_westeurope" ####NEED TO CHANGE
 }
