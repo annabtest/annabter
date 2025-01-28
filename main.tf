@@ -73,19 +73,11 @@ module "aks_resource_group" {
 
 
 ### Resources for Ingress Controller
-module "ingress_resource_group" {
-  source = "./modules/resource_group"
-
-  rg_location   = var.location
-  naming_prefix = "rg_ingress"
-  naming_suffix = local.naming_suffix
-}
-
 module "public_ips" {
   source = "./modules/public_ips"
 
   pip_location  = var.location
   naming_prefix = "pip_ingress"
-  naming_suffix = local.naming_suffix
-  rg_name       = module.ingress_resource_group.rg_NAME
+  naming_suffix = var.envioronment
+  rg_name       = module.aks_resource_group.rg_NAME
 }
