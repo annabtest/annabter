@@ -46,13 +46,13 @@
 #   loga_id       = module.log_analytics.loga_id
 # }
 
-# module "aks_resource_group" {
-#   source = "./modules/resource_group"
+module "aks_resource_group" {
+  source = "./modules/resource_group"
 
-#   rg_location   = var.location
-#   naming_prefix = "rg_aks"
-#   naming_suffix = local.naming_suffix
-# }
+  rg_location   = var.location
+  naming_prefix = "rg_aks"
+  naming_suffix = local.naming_suffix
+}
 
 # module "aks_network" {
 #   source = "./modules/network"
