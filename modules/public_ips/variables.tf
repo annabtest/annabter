@@ -9,3 +9,7 @@ variable "rg_name" {
 variable "naming_suffix" {
   type = string
 }
+
+variable "naming_prefix" {
+  type = string
+}
