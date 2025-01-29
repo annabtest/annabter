@@ -7,13 +7,13 @@ resource "azurerm_kubernetes_cluster" "aks" {
   node_resource_group = "aks-nrg-${var.name_suffix}"
 
   default_node_pool {
-    name       = "systempool"
-    node_count = 1
-    vm_size    = "Standard_D2pls_v6"
+    name                 = "systempool"
+    node_count           = 1
+    vm_size              = "Standard_D2pls_v6"
     orchestrator_version = var.kubernetes_version
-    zones = [1]
-    max_count = 1
-    min_count = 1
+    zones                = [1]
+    max_count            = null
+    min_count            = null
   }
 
   identity {
