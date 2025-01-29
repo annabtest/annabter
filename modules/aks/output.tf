@@ -3,5 +3,5 @@ output "aks_id" {
 }
 
 output "rg_nrg_name" {
-  value = azurerm_kubernetes_cluster.aks.node_resource_group.name
+  value = azurerm_kubernetes_cluster.aks.node_resource_group
 }
