@@ -4,7 +4,7 @@
 module "hub_resource_group" {
   source = "./modules/resource_group"
 
-  location   = var.location
+  location      = var.location
   naming_prefix = "rg"
   naming_suffix = local.hub_name_suffix
 }
@@ -52,13 +52,31 @@ module "log_analytics" {
 
 ### AKS resources
 
-# Step 1: Hub resource group
-module "aks_resource_group" {
+# Step 1: Create AKS resource group
+# module "aks_resource_group" {
+#   source = "./modules/resource_group"
+
+#   location   = var.location
+#   naming_prefix = "rg"
+#   naming_suffix = local.name_suffix
+# }
+
+# Step 1: Create AKS resource group
+module "aks_rg" {
   source = "./modules/resource_group"
 
   location   = var.location
   naming_prefix = "rg"
   naming_suffix = local.name_suffix
+}
+
+# Step 2: Create ACR
+module "acr" {
+  source = "./modules/acr"
+
+  location       = var.location
+  resource_group = module.aks_rg.rg_name
+  name_suffix    = local.name_suffix
 }
 
 # module "aks_network" {
