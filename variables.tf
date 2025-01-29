@@ -19,11 +19,11 @@ variable "region_code" {
   type = string
 }
 
-variable "environment" {
+variable "env" {
   type = string
 }
 
-variable "department" {
+variable "proj" {
   type = string
 }
 
