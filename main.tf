@@ -76,7 +76,7 @@ module "acr" {
 
   location       = var.location
   resource_group = module.aks_rg.rg_name
-  name_suffix    = local.name_suffix
+  name_suffix    = local.namesuffix
 }
 
 # module "aks_network" {
