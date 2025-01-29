@@ -133,7 +133,7 @@ module "public_ips" {
   source = "./modules/public_ips"
 
   pip_location  = var.location
-  naming_prefix = "pip_ingress"
-  naming_suffix = var.env
-  rg_name       = "MC_rg_aks_we-dev-aks_kuberfortesting3_westeurope" ####NEED TO CHANGE
+  naming_prefix = "pip-ingress"
+  naming_suffix = local.name_suffix
+  rg_name       = module.aks_rg.rg_name
 }
