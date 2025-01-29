@@ -121,7 +121,7 @@ module "public_ips" {
   rg_name       = module.aks.rg_nrg_name
 }
 
-Step 6: Create a DNS Record 
+# Step 6: Create a DNS Record 
 module "dns_a_record_set" {
   source = "./modules/dns_record"
 
