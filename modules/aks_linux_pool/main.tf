@@ -1,8 +1,8 @@
 resource "azurerm_kubernetes_cluster_node_pool" "linux_pool" {
   zones                 = [1]
   kubernetes_cluster_id = var.kubernetes_cluster_id
-  max_count             = 1
-  min_count             = 1
+  max_count             = null
+  min_count             = null
   mode                  = "User"
   name                  = "linux${var.name_suffix}"
   orchestrator_version  = var.kubernetes_version
