@@ -23,7 +23,7 @@ variable "region_code" {
   type = string
 }
 
-variable "envioronment" {
+variable "environment" {
   type = string
 }
 
