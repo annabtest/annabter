@@ -11,7 +11,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count = 1
     vm_size    = "Standard_D2pls_v6"
     orchestrator_version = var.kubernetes_version
-    enable_auto_scaling = true
     zones = [1]
     max_count = 1
     min_count = 1
