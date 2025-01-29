@@ -121,16 +121,6 @@ module "public_ips" {
   rg_name       = module.aks.rg_nrg_name
 }
 
-# Step 6: Create a DNS Record 
-module "dns_a_record_set" {
-  source = "./modules/dns_record"
-
-  resource_group = module.aks_rg.rg_name
-  zone_name      = "boolanna.com."
-  record_name    = var.PROJ_NAME_PUB
-  public_ip      = [module.public_ips.pip_address]
-}
-
 # module "aks_network" {
 #   source = "./modules/network"
 
