@@ -79,6 +79,17 @@ module "acr" {
   name_suffix    = local.namesuffix
 }
 
+# Step 3: Create AKS
+module "aks" {
+  source = "./modules/aks"
+
+  location = var.location
+  resource_group = module.aks_rg.rg_name
+  name_suffix = local.name_suffix
+  kubernetes_version = data.azurerm_kubernetes_service_versions.current.latest_version
+  loga_id = module.log_analytics.loga_id
+}
+
 # module "aks_network" {
 #   source = "./modules/network"
 
