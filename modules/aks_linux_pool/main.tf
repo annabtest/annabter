@@ -1,6 +1,6 @@
 resource "azurerm_kubernetes_cluster_node_pool" "linux_pool" {
   zones                 = [1]
-  enable_auto_scaling   = true
+  enable_auto_scaling   = false
   kubernetes_cluster_id = var.kubernetes_cluster_id
   max_count             = 1
   min_count             = 1
