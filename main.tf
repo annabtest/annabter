@@ -4,7 +4,7 @@
 module "hub_resource_group" {
   source = "./modules/resource_group"
 
-  rg_location   = var.location
+  location   = var.location
   naming_prefix = "rg"
   naming_suffix = local.hub_name_suffix
 }
@@ -56,7 +56,7 @@ module "log_analytics" {
 module "aks_resource_group" {
   source = "./modules/resource_group"
 
-  rg_location   = var.location
+  location   = var.location
   naming_prefix = "rg"
   naming_suffix = local.name_suffix
 }
