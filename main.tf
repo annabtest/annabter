@@ -110,6 +110,26 @@ module "aks_linux_pool" {
 #   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 # }
 
+### Resources for Ingress Controller
+# Step 5: Create a Static Public IP
+module "public_ips" {
+  source = "./modules/public_ips"
+
+  pip_location  = var.location
+  naming_prefix = "pip-ingress"
+  naming_suffix = local.name_suffix
+  rg_name       = module.aks_rg.rg_name
+}
+
+# Step 6: Create a DNS Record 
+module "dns_a_record_set" {
+  source = "./modules/dns_record"
+
+  zone_name   = var.DOMAIN_NAME
+  record_name = var.PROJ_NAME_PUB
+  public_ip   = [module.public_ips.pip_address]
+}
+
 # module "aks_network" {
 #   source = "./modules/network"
 
@@ -128,20 +148,4 @@ module "aks_linux_pool" {
 # }
 
 
-### Resources for Ingress Controller
-module "public_ips" {
-  source = "./modules/public_ips"
 
-  pip_location  = var.location
-  naming_prefix = "pip-ingress"
-  naming_suffix = local.name_suffix
-  rg_name       = module.aks_rg.rg_name
-}
-
-module "dns_a_record_set" {
-    source = "./modules/dns_record"
-
-    zone_name = var.DOMAIN_NAME
-    record_name = var.PROJ_NAME_PUB
-    public_ip = [ module.public_ips.pip_address ]
-}
