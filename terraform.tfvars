@@ -1,10 +1,10 @@
 # Naming Convention Values
 department   = "aks"
-envioronment = "dev"
+# envioronment = "dev"
 region_code  = "we"
 
 # General Properties
-location = "West Europe"
+# location = "West Europe"
 
 # HUB Network Configurations
 hub_vnet_address_space       = ["10.70.0.0/24"]
