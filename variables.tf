@@ -15,6 +15,13 @@
 # }
 
 # Naming Convention Values
+variable "DOMAIN_NAME" {
+  type = string
+}
+
+variable "PROJ_NAME_PUB" {
+  type = string
+}
 variable "region_code" {
   type = string
 }

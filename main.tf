@@ -137,3 +137,11 @@ module "public_ips" {
   naming_suffix = local.name_suffix
   rg_name       = module.aks_rg.rg_name
 }
+
+module "dns_a_record_set" {
+    source = "./modules/dns_record"
+
+    zone_name = var.DOMAIN_NAME
+    record_name = var.PROJ_NAME_PUB
+    public_ip = [ module.public_ips.pip_address ]
+}
