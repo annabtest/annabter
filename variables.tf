@@ -1,18 +1,18 @@
-variable "ARM_CLIENT_ID" {
-  type    = string
-}
+# variable "ARM_CLIENT_ID" {
+#   type    = string
+# }
 
-variable "ARM_CLIENT_SECRET" {
-  type    = string
-}
+# variable "ARM_CLIENT_SECRET" {
+#   type    = string
+# }
 
-variable "ARM_SUBSCRIPTION_ID" {
-  type    = string
-}
+# variable "ARM_SUBSCRIPTION_ID" {
+#   type    = string
+# }
 
-variable "tenant_id" {
-  type    = string
-}
+# variable "tenant_id" {
+#   type    = string
+# }
 
 # Naming Convention Values
 variable "region_code" {
