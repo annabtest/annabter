@@ -1,4 +1,4 @@
-variable "rg_location" {
+variable "location" {
   type = string
 }
 

@@ -1,18 +1,22 @@
-# module "hub_resource_group" {
-#   source = "./modules/resource_group"
+### HUB resrources ###
 
-#   rg_location   = var.location
-#   naming_prefix = "rg_hub"
-#   naming_suffix = local.naming_suffix
-# }
+# Step 1: Hub resource group
+module "hub_resource_group" {
+  source = "./modules/resource_group"
 
-# module "log_analytics" {
-#   source = "./modules/log_analytics"
+  rg_location   = var.location
+  naming_prefix = "rg"
+  naming_suffix = local.hub_name_suffix
+}
 
-#   location      = var.location
-#   naming_suffix = local.naming_suffix
-#   rg_name       = module.hub_resource_group.rg_NAME
-# }
+# Step 2: Create log Analytics
+module "log_analytics" {
+  source = "./modules/log_analytics"
+
+  location      = var.location
+  naming_suffix = local.hub_name_suffix
+  rg_name       = module.hub_resource_group.rg_name
+}
 
 # module "public_ips" {
 #   source = "./modules/public_ips"
@@ -46,11 +50,14 @@
 #   loga_id       = module.log_analytics.loga_id
 # }
 
+### AKS resources
+
+# Step 1: Hub resource group
 module "aks_resource_group" {
   source = "./modules/resource_group"
 
   rg_location   = var.location
-  naming_prefix = "rg_aks"
+  naming_prefix = "rg"
   naming_suffix = local.name_suffix
 }
 
