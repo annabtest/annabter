@@ -51,7 +51,7 @@ module "aks_resource_group" {
 
   rg_location   = var.location
   naming_prefix = "rg_aks"
-  naming_suffix = local.naming_suffix
+  naming_suffix = local.name_suffix
 }
 
 # module "aks_network" {
