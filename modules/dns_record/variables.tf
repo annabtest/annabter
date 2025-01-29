@@ -9,3 +9,7 @@ variable "record_name" {
 variable "public_ip" {
   type = list(string)
 }
+
+variable "resource_group" {
+  type = string
+}

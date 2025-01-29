@@ -125,9 +125,10 @@ module "public_ips" {
 module "dns_a_record_set" {
   source = "./modules/dns_record"
 
-  zone_name   = "${var.DOMAIN_NAME}."
-  record_name = var.PROJ_NAME_PUB
-  public_ip   = [module.public_ips.pip_address]
+  resource_group = module.aks_rg.rg_name
+  zone_name      = "${var.DOMAIN_NAME}."
+  record_name    = var.PROJ_NAME_PUB
+  public_ip      = [module.public_ips.pip_address]
 }
 
 # module "aks_network" {
