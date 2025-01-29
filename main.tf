@@ -56,7 +56,7 @@ module "log_analytics" {
 module "aks_resource_group" {
   source = "./modules/resource_group"
 
-  location   = var.location
+  location      = var.location
   naming_prefix = "rg_aks"
   naming_suffix = local.naming_suffix
 }
@@ -65,7 +65,7 @@ module "aks_resource_group" {
 module "aks_rg" {
   source = "./modules/resource_group"
 
-  location   = var.location
+  location      = var.location
   naming_prefix = "rg"
   naming_suffix = local.name_suffix
 }
@@ -83,12 +83,32 @@ module "acr" {
 module "aks" {
   source = "./modules/aks"
 
-  location = var.location
-  resource_group = module.aks_rg.rg_name
-  name_suffix = local.name_suffix
+  location           = var.location
+  resource_group     = module.aks_rg.rg_name
+  name_suffix        = local.name_suffix
   kubernetes_version = data.azurerm_kubernetes_service_versions.current.latest_version
-  loga_id = module.log_analytics.loga_id
+  loga_id            = module.log_analytics.loga_id
 }
+
+# Step 4: Create Linux Pool
+module "aks_linux_pool" {
+  source = "./modules/aks_linux_pool"
+
+  kubernetes_cluster_id = module.aks.aks_id
+  name_suffix           = local.namesuffix
+  os_type               = "Linux"
+  kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
+}
+
+# # Enable if needed: Create Linux Pool
+# module "aks_windows_pool" {
+#   source = "./modules/aks_linux_pool"
+
+#   kubernetes_cluster_id = module.aks.aks_id
+#   name_suffix           = local.namesuffix
+#   os_type               = "Windows"
+#   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
+# }
 
 # module "aks_network" {
 #   source = "./modules/network"
