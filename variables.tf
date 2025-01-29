@@ -15,9 +15,9 @@
 # }
 
 # Naming Convention Values
-# variable "region_code" {
-#   type = string
-# }
+variable "region_code" {
+  type = string
+}
 
 variable "env" {
   type = string
