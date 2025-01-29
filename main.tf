@@ -95,20 +95,20 @@ module "aks_linux_pool" {
   source = "./modules/aks_linux_pool"
 
   kubernetes_cluster_id = module.aks.aks_id
-  name_suffix           = local.name_suffix
+  name_suffix           = local.namesuffix
   os_type               = "Linux"
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
-# Enable if needed: Create Linux Pool
-module "aks_windows_pool" {
-  source = "./modules/aks_linux_pool"
+# # Enable if needed: Create Linux Pool
+# module "aks_windows_pool" {
+#   source = "./modules/aks_linux_pool"
 
-  kubernetes_cluster_id = module.aks.aks_id
-  name_suffix           = local.name_suffix
-  os_type               = "Windows"
-  kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
-}
+#   kubernetes_cluster_id = module.aks.aks_id
+#   name_suffix           = local.namesuffix
+#   os_type               = "Windows"
+#   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
+# }
 
 # module "aks_network" {
 #   source = "./modules/network"
