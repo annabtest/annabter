@@ -3,7 +3,7 @@ variable "group_name" {
 }
 
 variable "members" {
-  type = list(string)
+  type = string
 }
 
 variable "ARM_SUBSCRIPTION_ID" {
