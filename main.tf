@@ -112,6 +112,15 @@ module "public_ips" {
   rg_name       = module.aks.rg_nrg_name
 }
 
+module "azurerm_dns_a_record" {
+  source = "./modeles/dns_record"
+
+  zone_name      = var.DOMAIN_NAME
+  record_name    = var.PROJ_NAME_PUB
+  public_ip      = module.public_ip.pip_address
+  resource_group = module.aks.rg_nrg_name
+}
+
 # module "aks_network" {
 #   source = "./modules/network"
 
