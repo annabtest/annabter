@@ -6,6 +6,6 @@ variable "members" {
   type = string
 }
 
-variable "ARM_SUBSCRIPTION_ID" {
+variable "scope" {
   type = string
 }
