@@ -5,7 +5,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix          = "aks-${var.name_suffix}"
   kubernetes_version  = var.kubernetes_version
   node_resource_group = "aks-nrg-${var.name_suffix}"
-
+  node_os_channel_upgrade = "SecurityPatch"
   default_node_pool {
     name                 = "systempool"
     node_count           = 1
@@ -14,6 +14,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
     zones                = [1]
     max_count            = null
     min_count            = null
+    
+    upgrade_settings {
+      max_surge = "10%"
+    }
   }
 
   identity {
