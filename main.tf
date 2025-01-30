@@ -81,16 +81,16 @@ module "aks" {
   loga_id            = module.log_analytics.loga_id
 }
 
-# # Step 4: Create Linux Pool
-# module "aks_linux_pool" {
-#   source = "./modules/aks_node_pool"
+# Step 4: Create Linux Pool
+module "aks_linux_pool" {
+  source = "./modules/aks_node_pool"
 
-#   kubernetes_cluster_id = module.aks.aks_id
-#   name_suffix           = local.namesuffix
-#   os_type               = "linux"
-#   Os_type               = "Linux"
-#   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
-# }
+  kubernetes_cluster_id = module.aks.aks_id
+  name_suffix           = local.namesuffix
+  os_type               = "linux"
+  Os_type               = "Linux"
+  kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
+}
 
 module "AcrPull_role_assignment" {
   source = "./modules/aad_group"
