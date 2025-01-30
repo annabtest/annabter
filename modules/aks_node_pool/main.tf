@@ -8,6 +8,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "node_pool" {
   orchestrator_version  = var.kubernetes_version
   os_type               = var.Os_type
   vm_size               = "Standard_DS2_v2"
+  enable_auto_scaling   = true
   upgrade_settings {
     max_surge = "10%"
   }
