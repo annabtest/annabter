@@ -92,6 +92,15 @@ module "aks_linux_pool" {
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
+module "ArcPull_role_assignment" {
+  source = "./modules/aad_group"
+
+  group_name = "aad-group-arcpull-${local.name_sufix}"
+  members = [ module.aks.sid_id ]
+  ARM_SUBSCRIPTION_ID = var.ARM_SUBSCRIPTION_ID
+
+}
+
 # # Enable if needed: Create Linux Pool
 # module "aks_node_pool" {
 #   source = "./modules/aks_linux_pool"
