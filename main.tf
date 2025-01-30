@@ -88,15 +88,15 @@ module "aks_linux_pool" {
   kubernetes_cluster_id = module.aks.aks_id
   name_suffix           = local.namesuffix
   os_type               = "linux"
-  Os_type = "Linux"
+  Os_type               = "Linux"
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
 module "ArcPull_role_assignment" {
   source = "./modules/aad_group"
 
-  group_name = "aad-group-arcpull-${local.name_suffix}"
-  members = module.aks.sid_id
+  group_name          = "aad-group-arcpull-${local.name_suffix}"
+  members             = module.aks.sid_id
   ARM_SUBSCRIPTION_ID = var.ARM_SUBSCRIPTION_ID
 
 }
