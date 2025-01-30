@@ -53,15 +53,6 @@ module "log_analytics" {
 ### AKS resources
 
 # Step 1: Create AKS resource group
-module "aks_resource_group" {
-  source = "./modules/resource_group"
-
-  location      = var.location
-  naming_prefix = "rg_aks"
-  naming_suffix = local.naming_suffix
-}
-
-# Step 1: Create AKS resource group
 module "aks_rg" {
   source = "./modules/resource_group"
 
