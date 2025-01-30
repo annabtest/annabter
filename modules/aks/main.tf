@@ -31,3 +31,45 @@ resource "azurerm_kubernetes_cluster" "aks" {
     network_plugin = "azure"
   }
 }
+
+# Attach Diagnostic Settings for AKS
+resource "azurerm_monitor_diagnostic_setting" "aks_diagnostics" {
+  name                       = "aks-diagnostics"
+  target_resource_id         = azurerm_kubernetes_cluster.aks.id
+  log_analytics_workspace_id = var.loga_id
+
+  log {
+    category = "kube-apiserver"
+    enabled  = true
+  }
+
+  log {
+    category = "kube-controller-manager"
+    enabled  = true
+  }
+
+  log {
+    category = "kube-scheduler"
+    enabled  = true
+  }
+
+  log {
+    category = "cluster-autoscaler"
+    enabled  = true
+  }
+
+  log {
+    category = "kube-audit"
+    enabled  = true
+  }
+
+  log {
+    category = "kube-audit-admin"
+    enabled  = true
+  }
+
+  metric {
+    category = "AllMetrics"
+    enabled  = true
+  }
+}
