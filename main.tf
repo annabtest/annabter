@@ -88,6 +88,7 @@ module "aks_linux_pool" {
   kubernetes_cluster_id = module.aks.aks_id
   name_suffix           = local.namesuffix
   os_type               = "linux"
+  Os_type = "Linux"
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 

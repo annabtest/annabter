@@ -13,3 +13,7 @@ variable "kubernetes_version" {
 variable "os_type" {
   type = string
 }
+
+variable "Os_type" {
+  type = string
+}
