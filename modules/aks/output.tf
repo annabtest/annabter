@@ -7,5 +7,5 @@ output "rg_nrg_name" {
 }
 
 output "sid_id" {
-  value = azurerm_kubernetes_cluster.aks.identity
+  value = azurerm_kubernetes_cluster.aks.identity[0].principal_id
 }
