@@ -87,7 +87,7 @@ module "aks_linux_pool" {
 
   kubernetes_cluster_id = module.aks.aks_id
   name_suffix           = local.namesuffix
-  os_type               = "Linux"
+  os_type               = "linux"
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
@@ -117,7 +117,7 @@ module "azurerm_dns_a_record" {
 
   zone_name      = data.azurerm_dns_zone.example.name
   record_name    = var.PROJ_NAME_PUB
-  public_ip      = [ module.public_ips.pip_address ]
+  public_ip      = [module.public_ips.pip_address]
   resource_group = data.azurerm_dns_zone.example.resource_group_name
 }
 
