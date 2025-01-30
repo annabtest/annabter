@@ -83,7 +83,7 @@ module "aks" {
 
 # Step 4: Create Linux Pool
 module "aks_linux_pool" {
-  source = "./modules/aks_linux_pool"
+  source = "./modules/aks_node_pool"
 
   kubernetes_cluster_id = module.aks.aks_id
   name_suffix           = local.namesuffix
@@ -92,7 +92,7 @@ module "aks_linux_pool" {
 }
 
 # # Enable if needed: Create Linux Pool
-# module "aks_windows_pool" {
+# module "aks_node_pool" {
 #   source = "./modules/aks_linux_pool"
 
 #   kubernetes_cluster_id = module.aks.aks_id
