@@ -2,7 +2,7 @@ resource "azuread_group" "example" {
   display_name     = var.group_name
   security_enabled = true
 
-  members = var.members
+  members = [var.members]
 }
 
 resource "azurerm_role_assignment" "example" {
