@@ -92,10 +92,10 @@ module "aks_linux_pool" {
   kubernetes_version    = data.azurerm_kubernetes_service_versions.current.latest_version
 }
 
-module "ArcPull_role_assignment" {
+module "AcrPull_role_assignment" {
   source = "./modules/aad_group"
 
-  group_name = "aad-group-arcpull-${local.name_suffix}"
+  group_name = "aad-group-acrpull-${local.name_suffix}"
   members    = module.aks.sid_id
   scope      = module.aks_rg.rg_id
 
