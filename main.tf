@@ -113,7 +113,7 @@ module "public_ips" {
 }
 
 module "azurerm_dns_a_record" {
-  source = "./modeles/dns_record"
+  source = "./modules/dns_record"
 
   zone_name      = var.DOMAIN_NAME
   record_name    = var.PROJ_NAME_PUB
