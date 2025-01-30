@@ -118,7 +118,7 @@ module "azurerm_dns_a_record" {
   zone_name      = data.azurerm_dns_zone.example.name
   record_name    = var.PROJ_NAME_PUB
   public_ip      = [ module.public_ips.pip_address ]
-  resource_group = module.aks.rg_nrg_name
+  resource_group = data.azurerm_dns_zone.example.resource_group_name
 }
 
 # module "aks_network" {
