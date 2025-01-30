@@ -95,7 +95,7 @@ module "aks_linux_pool" {
 module "ArcPull_role_assignment" {
   source = "./modules/aad_group"
 
-  group_name = "aad-group-arcpull-${local.name_sufix}"
+  group_name = "aad-group-arcpull-${local.name_suffix}"
   members = [ module.aks.sid_id ]
   ARM_SUBSCRIPTION_ID = var.ARM_SUBSCRIPTION_ID
 
