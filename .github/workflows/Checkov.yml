@@ -20,3 +20,11 @@ jobs:
 
     - name: Run Checkov Security Scan
       run: checkov -d .
+
+    - name: Install tfsec
+      run: |
+        curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+
+    - name: Run tfsec Scan
+      run: tfsec .
+
