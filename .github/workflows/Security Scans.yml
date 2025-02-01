@@ -1,4 +1,4 @@
-name: Terraform Security Scan with Checkov
+name: Terraform Security Scans Checkov and tfsec
 
 on:
   pull_request:  # Runs Checkov on every PR before merging
