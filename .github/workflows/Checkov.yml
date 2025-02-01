@@ -1,0 +1,22 @@
+name: Terraform Security Scan with Checkov
+
+on:
+  pull_request:  # Runs Checkov on every PR before merging
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  security-scan:
+    name: Run Checkov Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Checkov
+      run: pip install checkov
+
+    - name: Run Checkov Security Scan
+      run: checkov -d .
